@@ -87,7 +87,7 @@ export class RawTerminalPrompt extends EventEmitter {
         const avgVariance = varianceSum / this.keystrokeTimings.length;
         
         if (avgVariance < HUMAN_TYPING_MIN_VARIANCE_MS) {
-            console.log(chalk.red('\n[ANTI-CHEAT] INHUMAN TYPING CADENCE DETECTED.'));
+            console.log(chalk.red('\n[SYSTEM] Input event validation failed.'));
             return false;
         }
         return true;

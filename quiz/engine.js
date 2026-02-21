@@ -133,7 +133,7 @@ async function simulateIncomingGame(prompt) {
     );
     
     if (sFactor < 1.0) {
-        console.log(chalk.dim.red(`\n[SILENT FLAG] Robotic latency detected (${simulatedResponseTimeMs}ms). Applying S-Factor: ${sFactor}`));
+        console.log(chalk.dim(`\n[EVENT] Latency check completed for response (${simulatedResponseTimeMs}ms).`));
     }
     
     const payload = {

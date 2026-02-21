@@ -16,8 +16,7 @@ export class AdjudicatorEngine extends EventEmitter {
         console.log(chalk.yellow(`\n[ADJUDICATOR] Dispatching fuzzy answer for review in [${namespace}]...`));
         
         // Find qualified judges online
-        // In reality, this queries the network Map we built in swarm/network.js
-        console.log("Looking for experts with T-Score > 85.0 and High Interest...");
+        console.log("Locating qualified experts for review...");
         
         const taskId = `duty-${Date.now()}`;
         
@@ -126,7 +125,7 @@ export class AdjudicatorEngine extends EventEmitter {
                 await updateJudgeScore(row.judge_id, row.tag, newScore.primary_t_score);
             }
             
-            console.log(chalk.green(`✓ Scoreboard recalibrated using proprietary SGE vectors.`));
+            console.log(chalk.green(`✓ Scoreboard recalibrated using standard reputation vectors.`));
         } catch (err) {
             console.error(chalk.red(`Error recalibrating scoreboard: ${err.message}`));
         }
