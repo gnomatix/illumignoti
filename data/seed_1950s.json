@@ -1,0 +1,870 @@
+{
+  "seed_description": "Mode-Driven Poly-schema test questions (safe IP testbed)",
+  "timestamp": 1771633134937,
+  "modes": [
+    {
+      "type": "schema:mode",
+      "mode_id": "m-jeopardy",
+      "name": "Classic Free Text Jeopardy",
+      "namespace": "illumignoti://history/jeopardy",
+      "base_time_to_answer_ms": 15000,
+      "difficulty_scaling_factor": 1.5,
+      "allows_chaining": false,
+      "allowed_media_types": [
+        "text"
+      ],
+      "allowed_input_types": [
+        "free_text"
+      ]
+    },
+    {
+      "type": "schema:mode",
+      "mode_id": "m-wheel",
+      "name": "Wheel of Guesses",
+      "namespace": "illumignoti://puzzles/wheel_of_fortune",
+      "base_time_to_answer_ms": 30000,
+      "difficulty_scaling_factor": 1.2,
+      "allows_chaining": false,
+      "allowed_media_types": [
+        "hangman_mask"
+      ],
+      "allowed_input_types": [
+        "single_char"
+      ]
+    },
+    {
+      "type": "schema:mode",
+      "mode_id": "m-whats-my-line",
+      "name": "What's My Line (True/False)",
+      "namespace": "illumignoti://logic/whats_my_line",
+      "base_time_to_answer_ms": 10000,
+      "difficulty_scaling_factor": 1,
+      "allows_chaining": false,
+      "allowed_media_types": [
+        "text"
+      ],
+      "allowed_input_types": [
+        "boolean"
+      ]
+    },
+    {
+      "type": "schema:mode",
+      "mode_id": "m-wwtbam",
+      "name": "Who Wants To Be A Millionaire",
+      "namespace": "illumignoti://trivia/general",
+      "base_time_to_answer_ms": 45000,
+      "difficulty_scaling_factor": 2,
+      "allows_chaining": true,
+      "allowed_media_types": [
+        "text",
+        "ansi_image"
+      ],
+      "allowed_input_types": [
+        "selection"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "q-1771633134936-0",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Mythology) According to Norse mythology, Loki is a mother."
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "True"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-1",
+      "type": "schema:question",
+      "difficulty_tier": 8,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "What internet protocol was documented in RFC 1459?",
+        "mask": "___"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "IRC"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-2",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"Which of these is NOT a name of an album released by American rapper Pitbull?\" is Welcome to Miami."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-3",
+      "type": "schema:question",
+      "difficulty_tier": 8,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "&quot;Exile&quot; and &quot;Revelations&quot; were the third and fourth installments of which PC game series?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "Myst",
+          "Shivers",
+          "Doom",
+          "Tropico"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-4",
+      "type": "schema:question",
+      "difficulty_tier": 8,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Science &amp; Nature) In the Scoville scale, what is the hottest chemical?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "Resiniferatoxin"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-5",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "In blood typing, the (+) and (-) marker after an A, B, AB, or O is called Rh factor. Which of the following is the source of its discovery?",
+        "mask": "______ _______"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "Rhesus Monkeys"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-6",
+      "type": "schema:question",
+      "difficulty_tier": 8,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"In the book series &quot;Odd Thomas&quot;, Danny Jessup has what genetic disease? \" is  Osteogenesis Imperfecta."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-7",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "How old is the universe?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "13.8 Billion Years",
+          "4.5 Billion Years",
+          "7.9 Billion Years",
+          "16.2 Billion Years"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-8",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Geography) Which country ranks first in the number of historically active volcanoes?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "Indonesia"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-9",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "Which of these countries is the smallest by population?",
+        "mask": "______"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "Norway"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-10",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"The New York Times slogan is, &ldquo;All the News That&rsquo;s Fit to&hellip;&rdquo;\" is Print."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-11",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "When was Final Fantasy XV released?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "November 29th, 2016",
+          "October 25th, 2016",
+          "December 31th, 2016",
+          "November 30th, 2016"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-12",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Entertainment: Video Games) In The Elder Scrolls: Oblivion, the horse that goes by the name Shadowmere is given by what guild?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "Dark Brotherhood"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-13",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "Like with the Neanderthals, Homo sapiens sapiens also interbred with the Denisovans.",
+        "mask": "____"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "True"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-14",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"According to a song by Belinda Carlisle, Heaven is a place on what?\" is Earth."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-15",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "In the show &quot;Tengen Toppa Gurren Lagann&quot; what is the name of the character who force everyone to live underground?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "Lordgenome",
+          "Kingloname",
+          "Lord Genome",
+          "King Loname"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-16",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Mythology) In Norse mythology, Thor once dressed as a woman."
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "True"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-17",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "Which building was set aflame on August 24th, 1812?",
+        "mask": "___ _____ _____"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "The White House"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-18",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"What position does Harry Potter play in Quidditch?\" is Seeker."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-19",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "Which operating system was released first?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "Mac OS",
+          "Windows",
+          "Linux",
+          "OS/2"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-20",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Entertainment: Music) Which one of these artists appears in the album Deltron 3030?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "Dan the Automater"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-21",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "What is not a default game mode in Counter-Strike (2000)?",
+        "mask": "____ ____"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "Arms Race"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-22",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"What does IWHBYD stand for on the skull in the Halo series?\" is I Would Have Been Your Daddy."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-23",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "&quot;Tomb Raider&quot; icon Lara Croft was originally called..."
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "Laura Cruz",
+          "Laura Craft",
+          "Laura Croft",
+          "Lara Craft"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-24",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Science: Computers) How many bits make up the significand portion of a single precision floating point number?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "23"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-25",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "Which actor played the main character in the 1990 film &quot;Edward Scissorhands&quot;?",
+        "mask": "______ ____"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "Johnny Depp"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-26",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"What is the capital city of Slovenia?\" is Ljubljana."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-27",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "What was the name of the canceled projected by Blizzard Entertainment that would be later become Overwatch?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "Titan",
+          "Omnic",
+          "Omega",
+          "Ghost"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-28",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: History) The Tiananmen Square protests of 1989 were held in Hong Kong."
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "False"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-29",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "Which famous world leader is famed for the saying, &quot;Let them eat cake&quot;, yet is rumored that he/she never said it at all?",
+        "mask": "_____ __________"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "Marie Antoinette"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-30",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"What is Dipper&#039;s real name from &quot;Gravity Falls&quot;?\" is Mason Pines."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-31",
+      "type": "schema:question",
+      "difficulty_tier": 8,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "What is the name of the school in the anime and manga &quot;Gosick&quot;?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "St. Marguerite",
+          "St. Augustine",
+          "St. Mary",
+          "St. Bernadette"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-32",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Entertainment: Music) What was Radiohead&#039;s first album?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "Pablo Honey"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-33",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "Leonardo da Vinci was not the creator of the Mona Lisa.",
+        "mask": "_____"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "False"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-34",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"The greek god Poseidon was the god of what?\" is The Sea."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-35",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "What is the name of the fourth book in Stephen King&#039;s The Dark Tower series?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "Wizard and Glass",
+          "Wolves of the Calla",
+          "Hearts in Atlantis",
+          "The Dark Half"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-36",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Entertainment: Cartoon &amp; Animations) In the 1993 Disney animated series &quot;Bonkers&quot;, what is the name of Bonker&#039;s second partner?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "Miranda Wright"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-37",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "What is the name of the main Character from the Series: Dead Space?",
+        "mask": "_____ ______"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "Isaac Clarke"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-38",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"Who released the 1991 album &quot;Out of Time&quot;?\" is R.E.M.."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-39",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "King Henry VIII was the second monarch of which European royal house?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "Tudor",
+          "York",
+          "Stuart",
+          "Lancaster"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-40",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Entertainment: Video Games) Which of these characters is the mascot of the video game company SEGA?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "Sonic the Hedgehog"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-41",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "When was the Playstation 3 released?",
+        "mask": "________ 11, 2006"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "November 11, 2006"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-42",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"The 2014 movie &quot;The Raid 2: Berandal&quot; was mainly filmed in which Asian country?\" is Indonesia."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-43",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "What does Solid Snake use to hide himself with?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "Cardboard Box",
+          "Cloaking Device",
+          "Metal Crate",
+          "Cardboard cut-out"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-44",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: History) Who was the last Roman emperor in the Year of Four Emperors (69 AD)?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "Vespasian"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-45",
+      "type": "schema:question",
+      "difficulty_tier": 8,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "The film Mad Max: Fury Road features the Dies Irae  from which composer&#039;s requiem?",
+        "mask": "_____"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "Verdi"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-1771633134937-46",
+      "type": "schema:question",
+      "difficulty_tier": 2,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "The answer to \"On the NBC show Community, whose catch-phrase was &quot;Pop! Pop!&quot;?\" is Magnitude."
+      },
+      "interaction": {
+        "input_type": "boolean",
+        "expected_truth": true
+      },
+      "mode_id": "m-whats-my-line"
+    },
+    {
+      "question_id": "q-1771633134937-47",
+      "type": "schema:question",
+      "difficulty_tier": 8,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "How many playable characters are there in Super Smash Bros. for Nintendo 3DS and Wii U?"
+      },
+      "interaction": {
+        "input_type": "selection",
+        "options": [
+          "58",
+          "48",
+          "51",
+          "55"
+        ],
+        "expected_idx": 0
+      },
+      "mode_id": "m-wwtbam"
+    },
+    {
+      "question_id": "q-1771633134937-48",
+      "type": "schema:question",
+      "difficulty_tier": 8,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "(Category: Geography) Bir Tawil, an uninhabited track of land claimed by no country, is located along the border of which two countries?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "Egypt and Sudan"
+      },
+      "mode_id": "m-jeopardy"
+    },
+    {
+      "question_id": "q-1771633134937-49",
+      "type": "schema:question",
+      "difficulty_tier": 5,
+      "presentation": {
+        "media_type": "hangman_mask",
+        "prompt_text": "Ellen McLain, the voice of GLaDOS in the Portal game series, is married to the voice actor for which Team Fortress 2 character?",
+        "mask": "______"
+      },
+      "interaction": {
+        "input_type": "single_char",
+        "expected_solution": "Sniper"
+      },
+      "mode_id": "m-wheel"
+    },
+    {
+      "question_id": "q-part2-chained",
+      "type": "schema:question",
+      "mode_id": "m-wwtbam",
+      "difficulty_tier": 6,
+      "depends_on_id": "q-1771633134937-3",
+      "is_multipart": true,
+      "presentation": {
+        "media_type": "text",
+        "prompt_text": "Following up from that last question, why did you pick that?"
+      },
+      "interaction": {
+        "input_type": "free_text",
+        "expected_truth": "user rationale"
+      }
+    }
+  ]
+}

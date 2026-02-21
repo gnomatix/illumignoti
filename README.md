@@ -1,53 +1,87 @@
-# Illumignoti
+# !["Illumignoti"](assets/images/illumignoti-stonecutters-xs.png "Are you ready to join... The Illumignoti???")
 
-Swarm-based, anonymized knowledge quiz system.
+> 🧠 **The ultimate decentralized trivia battleground.** Test your knowledge, outsmart your peers, rise in the ranks, and take on "experts" from all over the world!
 
-## Why "Illumignoti" ?!?
+## Why "Illumignoti"?
 
-The name is a "portmanteau" of "illuminate" / "mignon" ("darling") / "gnosis",
-and an intentional play on the word "illuminati". (Because of the global, anonymized nature.)
+The name is a conceptual portmanteau combining **"illuminate"** (to bring light or understanding), **"mignon"** (darling or favored), and **"gnosis"** (knowledge). It serves as an intentional play on the word "illuminati"—reflecting the platform's global, shadowy, yet ultimately enlightening peer-to-peer nature.
+
+---
+
+![](assets/images/illumignoti-banner-m.png "Illumignoti Seal")
+
+
+---
+
+## Ethical Manifesto: Privacy & Gamified Expertise
+
+**Illumignoti fundamentally respects, values, and is architecturally designed to ensure absolute user privacy and anonymity.**
+
+This is a **game ecosystem**, and our engine logic dictates that any and all credentials the user provides are strictly **opt-in**. While you can play and interact completely pseudonymously forever, users who wish to identify themselves as "putative experts" can link verifiable external accounts (like ORCiD, LinkedIn, Google Scholar, etc.). 
+
+Doing so is simply a way to make the experience **more fun and personal**, opening up additional tier-based gaming features, matchmaker priority, and proactive "Stump the Expert" outreach. Anyone can do this. 
+
+If the platform doesn't currently support an open authentication protocol that allows you to "self-identify" in your specific field, please contact the developers and we'll work to include it!
+
+**Total Control:** You can also "opt-out" of anything at any time. For example, if you are a retired lawyer who only wants to answer questions about aviation and explicitly *never* anything related to law, the ontology system allows you to configure your node routing precisely to your liking.
+
+*(Note: To ensure the systemic integrity of the platform against automated gamification, the exact mathematical routing algorithms and trust multipliers are kept hidden in proprietary modules, but the open-source client and networking stack are fully auditable.)*
+
+---
+
+!["Welcome to the Illumignoti!!!"](assets/images/illumignoti-o-image.png "Secret cabals are fun for all ages!!!")
+
+---
+
 
 
 ## World-Wide Quiz Fun
 
-Illumignoti is a platform that allows users to participate in a world-wide trivia "Quiz Show".
+Illumignoti is a platform that allows users to participate in a world-wide trivia "Quiz Show" utilizing a dynamic, JSON-schema driven engine that supports infinite game variations:
 
-All quizes are "short form" and "gameshow style":
+- Classic Multiple Choice
+- Time-gated Jeopardy style
+- Free-text "Fill in the blank"
+- $10,000 Pyramid definitions
+- User-authored "Stump the Experts" content
 
-- multiple choice (weke)
-- Jeopardy style
-- fill in the blanks
-- true or false
-- $10,000 pyramid "explain to someone else without using the words" paraphrasing
-- Who Wants to Be a Millionaire
+All of the quizzes are categorized using a standard ontology/controlled vocabulary of knowledge areas, allowing you to curate exactly what you want to play.
 
-All of the quizes have 'Trivial Pursuit' style categories drawn from a standard 
-ontology / controlled vocabulary of knowledge areas. (Dewey decimal system?)
+---
 
-## Implementation Requirements
+![](assets/images/illumignoti-live-to-air-m.png)
 
-### Quiz Format
+---
 
-We need to use some standard for encoding "Quizes".
+## Implementation Architecture
 
-We could make our own custom JSON-Schema, but perhaps there are already standards.
+Illumignoti is built on **[Pear](https://github.com/holepunchto/pear)**.
 
-### Programming Language
+By utilizing Holepunch's Hypercore and Hyperswarm, the platform achieves zero-config, serverless, peer-to-peer matchmaking.
+- **Language:** JavaScript / Node.js
+- **Persistence:** Local SQLite databases for host-side state and verifiable log tracking
+- **UI:** Terminal User Interface (TUI) optimized for rapid interaction
 
-We will use Golang because of cross-platform functionality.
+### Are you ready to join... The Illumignoti?
+---
 
-We will make use of the following libraries (at least):
+![](assets/images/illumignoti-poster-m.png)
 
-- Hugo
-    - the application will provide a sophisticated and stylish Web UI
-    - the web UI will also facilitate user authentication via OpenID
-- Charmbracelet
-    - log, lipgloss, bubbletea, etc. for engaging and fun CLI support
-- cobra
-    - for sensible command structure
+---
 
-#### Should we just use Pear? 
+## Our Valued Global Partners
 
-Maybe we should just use Pear?
+| **YOU** | EPNI | ITVB | IOA |
+| :----: | :----: | :----: | :----: |
+| !["Illumignoti"](assets/images/illumignoti-seal-xs.png "Illumignoti") | !["EPNI"](assets/images/epni-global-s.png "You're in Good Hands!") | !["ITVB"](assets/images/itvb-seal-s.png "ITVB Seal") | !["IOA"](https://outrage.dataglut.org/assets/badges/ioa-safe-badge.svg "SAFE") |
 
-["holepunchto/pear"](https://github.com/holepunchto/pear)
+---
+
+## License: Business Source License (BSL)
+Copyright © 2026 GNOMATIX. All rights reserved.
+
+This software is licensed under the Business Source License (BSL) version 1.1. Usage of this software is subject to the terms of the BSL. See the LICENSE file for details.
+
+!["KILLBOTS ACTIVATE!" ](assets/images/gnomatix-killbots-activate-xs.png "KILLBOTS ACTIVATE!")
+
+!["GNOMATIX" ](assets/images/gnomatix-new-xs.png "GNOMATIX")
