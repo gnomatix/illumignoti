@@ -178,3 +178,25 @@ export function awardTaxonomyBadge(playerId, namespace) {
         });
     });
 }
+
+export function getAllJudgeScores() {
+    if (!db) throw new Error("DB not initialized");
+    return new Promise((resolve, reject) => {
+        db.all('SELECT * FROM judge_scores', [], (err, rows) => {
+            if (err) return reject(err);
+            resolve(rows);
+        });
+    });
+}
+
+export function updateJudgeScore(judgeId, tag, tScore) {
+    if (!db) throw new Error("DB not initialized");
+    return new Promise((resolve, reject) => {
+        db.run('UPDATE judge_scores SET t_score = ? WHERE judge_id = ? AND tag = ?',
+            [tScore, judgeId, tag],
+            (err) => {
+                if (err) return reject(err);
+                resolve();
+            });
+    });
+}

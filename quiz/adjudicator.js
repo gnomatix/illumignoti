@@ -1,5 +1,5 @@
 import { calculateTrustScore } from '../proprietary/heuristics.js';
-import { saveQuizQuestion, awardTaxonomyBadge } from '../storage/db.js';
+import { saveQuizQuestion, awardTaxonomyBadge, getAllJudgeScores, updateJudgeScore } from '../storage/db.js';
 import { QUIZ_TYPES } from './schema.js';
 import chalk from 'chalk';
 import EventEmitter from 'events';
@@ -117,23 +117,18 @@ export class AdjudicatorEngine extends EventEmitter {
 
     // 6. Periodic recalculation of T-Scores based on the database
     async refreshScoreboard() {
-        return new Promise((resolve) => {
-            this.db.all('SELECT * FROM judge_scores', [], (err, rows) => {
-                if (err) return resolve();
-                
-                rows.forEach(row => {
-                    // Inject the proprietary scoring algorithm
-                    const newScore = calculateTrustScore(row);
-                    
-                    this.db.run(
-                        'UPDATE judge_scores SET t_score = ? WHERE judge_id = ? AND tag = ?',
-                        [newScore.primary_t_score, row.judge_id, row.tag]
-                    );
-                });
-                
-                console.log(chalk.green(`✓ Scoreboard recalibrated using proprietary SGE vectors.`));
-                resolve();
-            });
-        });
+        try {
+            const rows = await getAllJudgeScores();
+            
+            for (const row of rows) {
+                // Inject the proprietary scoring algorithm
+                const newScore = calculateTrustScore(row);
+                await updateJudgeScore(row.judge_id, row.tag, newScore.primary_t_score);
+            }
+            
+            console.log(chalk.green(`✓ Scoreboard recalibrated using proprietary SGE vectors.`));
+        } catch (err) {
+            console.error(chalk.red(`Error recalibrating scoreboard: ${err.message}`));
+        }
     }
 }
